@@ -4,7 +4,7 @@ import videoSource from '../Media/vid.mp4'; // Adjust the path to your video fil
 
 const Header = () => {
   return (
-    <header className="relative h-[50vh] md:h-[60vh] lg:h-[70vh] overflow-hidden"> {/* Responsive height */}
+    <header className="relative h-[80vh] md:h-[70vh] lg:h-[94vh] overflow-hidden">
       {/* Background Video */}
       <video
         src={videoSource}
