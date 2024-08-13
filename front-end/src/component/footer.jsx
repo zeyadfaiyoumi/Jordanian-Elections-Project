@@ -17,10 +17,10 @@ const Footer = () => {
 
           {/* Footer Links */}
           <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 mb-4 md:mb-0">
-            <Link to="/about" className="text-blue-600 hover:text-blue-800">
+            <Link to="/pages/aboutUs" className="text-black hover:text-blue-800">
               من نحن
             </Link>
-            <Link to="/contact" className="text-blue-600 hover:text-blue-800">
+            <Link to="/pages/contactUs" className="text-black hover:text-blue-800">
               تواصل معنا
             </Link>
           </div>

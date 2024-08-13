@@ -42,15 +42,15 @@ const Nav = () => {
 
         {/* Navigation Links (Desktop) */}
         <div className="hidden md:flex md:items-center md:space-x-4 flex-grow justify-center">
-          <Link to="/about" className="hover:text-gray-600">
+          <Link to="/pages/aboutUs" className="hover:text-gray-600">
             من نحن
           </Link>
-          <Link to="/contact" className="hover:text-gray-600">
+          <Link to="/pages/contactUs" className="hover:text-gray-600">
             تواصل معنا
           </Link>
           <Link
-            to="/login"
-            className="bg-blue-500 text-white hover:bg-blue-600 py-2 px-4 rounded"
+            to="/pages/LoginPage"
+            className="bg-green-500 text-white hover:bg-green-600 py-2 px-4 rounded"
           >
             تسجيل دخول
           </Link>
@@ -82,21 +82,21 @@ const Nav = () => {
             </svg>
           </button>
           <Link
-            to="/about"
+            to="/pages/aboutUs"
             className="text-lg hover:text-gray-600"
             onClick={() => setIsOpen(false)}
           >
             من نحن
           </Link>
           <Link
-            to="/contact"
+            to="/pages/contactUs"
             className="text-lg hover:text-gray-600"
             onClick={() => setIsOpen(false)}
           >
             تواصل معنا
           </Link>
           <Link
-            to="/login"
+            to="/pages/LoginPage"
             className="bg-blue-500 text-white hover:bg-blue-600 py-2 px-4 rounded"
             onClick={() => setIsOpen(false)}
           >

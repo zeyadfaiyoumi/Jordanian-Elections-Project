@@ -23,7 +23,7 @@ const VotingInfoComponent = () => {
       }}
     >
       {/* Overlay to ensure text is readable */}
-      <div className="absolute inset-0 bg-black bg-opacity-50 z-0 "></div>
+      <div className="absolute inset-0 bg-black bg-opacity-50 z-0"></div>
 
       <div className="relative z-10 text-center">
         <h2 className="text-lg font-bold text-white mb-4">
@@ -38,9 +38,9 @@ const VotingInfoComponent = () => {
         ].map((item, index) => (
           <div key={index} className="border-b border-gray-300 mb-4">
             <div className="flex items-center justify-between py-2">
-              <span className="text-white flex-1">{item}</span>
+              <span className="text-white flex-1 font-bold">{item}</span> {/* Added font-bold class */}
               <button
-                className="bg-black text-white hover:bg-gray-900 p-2 rounded flex-shrink-0"
+                className="text-white bg-green-500 hover:bg-green-600 p-2 rounded flex-shrink-0 ml-4" 
                 onClick={() => toggleIframe(index)}
               >
                 {/* Down Arrow Icon */}
