@@ -26,9 +26,8 @@ The Elections Jordan Project is designed to manage the electoral process in Jord
 
 ## Deliverables
 
-- **Mockups and Wireframes:** Links available in the repository.
-- **Trello Board:** Project management board link.
-- **Functional Website:** Complete and responsive site.
+- **Mockups and Wireframes:** [View on Figma](https://www.figma.com/design/wn00fKAqXsxDGenf1h4R7s/Untitled?node-id=0-1&t=ElgmU950qbRgogmz-0)
+- **Trello Board:** (https://trello.com/b/r9vi1e2G/g4)
 
 ## Team
 
