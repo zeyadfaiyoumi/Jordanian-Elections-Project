@@ -1,4 +1,4 @@
-import Nav from "../component/Nav";
+import Navbar from "../component/Nav";
 import Header from "../component/Header";
 import VotingInfoComponent from "../component/vote";
 import Footer from "../component/footer";
@@ -9,7 +9,7 @@ function Home (){
 
     return(
         <>
-        <Nav/>
+        <Navbar/>
         <Header/>
         <Posts/>
         <CardsComponent/>

@@ -4,14 +4,14 @@ import videoSource from '../Media/vid.mp4'; // Adjust the path to your video fil
 
 const Header = () => {
   return (
-    <header className="relative h-[80vh] md:h-[70vh] lg:h-[94vh] overflow-hidden">
+    <header className="relative h-[80vh] md:h-[70vh] lg:h-[92vh] overflow-hidden">
       {/* Background Video */}
       <video
         src={videoSource}
         autoPlay
         loop
         muted
-        className="absolute top-0 left-0 w-full h-full object-cover"
+        className="absolute top-0 left-0 w-full h-full object-cover "
       ></video>
 
       {/* Overlay Content */}

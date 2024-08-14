@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/home';
 import AboutUs from './pages/aboutUs';
 import ContactUs from './pages/contactUs';
-import LoginPage from './pages/LoginPage';
+import LoginForm from './pages/LoginPage';
+import SignupPage from './pages/signUp';
+import OtpForm from './pages/otpForm';
 
 
 
@@ -13,8 +15,10 @@ const App = () => {
     <Router>
         <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/pages/LoginPage" element={<LoginPage />} />
+        <Route path="/pages/LoginPage" element={<LoginForm />} />
+        <Route path="/pages/signUp" element={<SignupPage />} />
         <Route path="/pages/aboutUs" element={<AboutUs />} />
+        <Route path="/pages/optForm" element={<OtpForm />} />
         <Route path="/pages/contactUs" element={<ContactUs />} />
         </Routes>
     </Router>
