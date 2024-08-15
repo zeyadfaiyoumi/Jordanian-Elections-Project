@@ -4,7 +4,9 @@ module.exports = {
     connection: {
       host: "127.0.0.1",
       user: "postgres",
-      password: "bmw*2212",
+      password: "admin123",
+      port: 5433, // المنفذ الجديد
+
       database: "Jordanian-Elections-Project",
     },
     migrations: {
