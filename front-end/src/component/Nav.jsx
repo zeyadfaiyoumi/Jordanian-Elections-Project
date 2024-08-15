@@ -46,7 +46,7 @@ const Navbar = () => {
             </button>
           ) : (
             <Link
-              to="/pages/signUp"
+              to="/pages/Login"
               className="bg-green-500 text-white hover:bg-green-600 py-2 px-4 rounded"
             >
               تسجيل دخول
@@ -145,7 +145,7 @@ const Navbar = () => {
             </button>
           ) : (
             <Link
-              to="/pages/signUp"
+              to="/pages/login"
               className="bg-green-500 text-white hover:bg-green-600 py-2 px-4 rounded"
               onClick={() => setIsOpen(false)} // Close the menu on link click
             >

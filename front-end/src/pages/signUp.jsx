@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom'; // Import Link for navigation
-import LoginForm from './LoginPage'; // Ensure this file contains the updated form
-import OtpForm from './otpForm'; // Update to ensure consistent styling
-import PasswordForm from './PasswordForm'; // Update to ensure consistent styling
+import LoginForm from './LoginForm'; // Make sure these imports are correctly referencing your form components
+import OtpForm from './OtpForm';
+import PasswordForm from './PasswordForm';
 import { useNavigate } from 'react-router-dom';
-import Cookies from 'js-cookie'; 
+import Cookies from 'js-cookie';
+import Swal from 'sweetalert2';
 import backgroundImage from '../Media/jordan.jpg'; // Same background image
 import logo from '../Media/logo.png'; // Same logo
 
-function SignupPage() {
+function SignUp() {
   const [step, setStep] = useState(1);
   const [nationalID, setNationalID] = useState('');
   const [name, setName] = useState('');
@@ -19,14 +19,33 @@ function SignupPage() {
   const handleLogin = async () => {
     try {
       const response = await axios.post('http://localhost:5000/api/auth/login', {
-        national_id: nationalID,
+        national_id: nationalID, // Consistent naming
         name,
       });
-      alert(response.data.message);
-      setStep(2);
+
+      if (response && response.data) {
+        Swal.fire({
+          title: 'رمز التحقق تم إرساله!',
+          text: response.data.message,
+          icon: 'success',
+          confirmButtonText: 'موافق'
+        });
+        setStep(2);
+      } else {
+        Swal.fire({
+          title: 'خطأ',
+          text: 'Unexpected response format',
+          icon: 'error',
+          confirmButtonText: 'موافق'
+        });
+      }
     } catch (error) {
-      const errorMessage = error.response ? error.response.data.message : 'An unexpected error occurred';
-      alert('Login failed: ' + errorMessage);
+      Swal.fire({
+        title: 'خطأ',
+        text: 'Login failed: ' + (error.response ? error.response.data.message : error.message),
+        icon: 'error',
+        confirmButtonText: 'موافق'
+      });
     }
   };
 
@@ -36,12 +55,31 @@ function SignupPage() {
         national_id: nationalID,
         otp,
       });
-      Cookies.set('token', response.data.token); 
-      alert('Login successful');
-      setStep(3);
+
+      if (response && response.data) {
+        Cookies.set('token', response.data.token); // Store the token in a cookie
+        Swal.fire({
+          title: 'تسجيل الدخول ناجح!',
+          text: 'تم التحقق من رمز التحقق.',
+          icon: 'success',
+          confirmButtonText: 'موافق'
+        });
+        setStep(3);
+      } else {
+        Swal.fire({
+          title: 'خطأ',
+          text: 'Unexpected response format',
+          icon: 'error',
+          confirmButtonText: 'موافق'
+        });
+      }
     } catch (error) {
-      const errorMessage = error.response ? error.response.data.message : 'An unexpected error occurred';
-      alert('Verification failed: ' + errorMessage);
+      Swal.fire({
+        title: 'خطأ',
+        text: 'Verification failed: ' + (error.response ? error.response.data.message : error.message),
+        icon: 'error',
+        confirmButtonText: 'موافق'
+      });
     }
   };
 
@@ -51,12 +89,31 @@ function SignupPage() {
         national_id: nationalID,
         password,
       });
-      alert('Password set successfully');
-      navigate('/');
+
+      if (response && response.data) {
+        Swal.fire({
+          title: 'تمت إعداد كلمة المرور!',
+          text: 'كلمة المرور تم تعيينها بنجاح.',
+          icon: 'success',
+          confirmButtonText: 'موافق'
+        }).then(() => {
+          navigate('/');
+        });
+      } else {
+        Swal.fire({
+          title: 'خطأ',
+          text: 'Unexpected response format',
+          icon: 'error',
+          confirmButtonText: 'موافق'
+        });
+      }
     } catch (error) {
-      const errorMessage = error.response ? error.response.data.message : 'An unexpected error occurred';
-      console.error('Password setup failed:', errorMessage);
-      alert('Password setup failed: ' + errorMessage);
+      Swal.fire({
+        title: 'خطأ',
+        text: 'Password setup failed: ' + (error.response ? error.response.data.message : error.message),
+        icon: 'error',
+        confirmButtonText: 'موافق'
+      });
     }
   };
 
@@ -66,9 +123,7 @@ function SignupPage() {
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <div className="w-full max-w-sm p-6 bg-white rounded-lg shadow-lg relative flex flex-col items-center">
-        <Link to="/" className="mb-6">
-          <img src={logo} alt="Logo" className="h-20" /> {/* Adjust height as needed */}
-        </Link>
+        <img src={logo} alt="Logo" className="h-20 mb-6" />
         {step === 1 && (
           <div>
             <h1 className="text-2xl font-bold mb-6 text-center text-gray-700">
@@ -97,6 +152,7 @@ function SignupPage() {
         {step === 3 && (
           <div>
             <h1 className="text-2xl font-bold mb-6 text-center text-gray-700">
+              إعداد كلمة المرور
             </h1>
             <PasswordForm
               nationalID={nationalID}
@@ -109,4 +165,4 @@ function SignupPage() {
   );
 }
 
-export default SignupPage;
+export default SignUp;

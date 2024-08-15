@@ -14,7 +14,7 @@ function PasswordForm({ nationalID, handlePasswordSetup }) {
 
   return (
     <div className="text-right">
-      <h2 className="text-2xl font-bold mb-4 text-center text-gray-800">تعيين كلمة المرور</h2>
+      <h2 className="text-2xl font-bold mb-4 text-center text-gray-800"></h2>
       <input
         type="password"
         placeholder="كلمة المرور"
