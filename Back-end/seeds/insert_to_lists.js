@@ -64,7 +64,19 @@ exports.seed = function(knex) {
       { list_name: 'قائمة الجدية', district_id: 3, vote_count: 0, logo: 'الجدية في العمل' },
       { list_name: 'قائمة الأمل المباشر', district_id: 1, vote_count: 0, logo: 'أمل مباشر لمستقبل مشرق' },
       { list_name: 'قائمة الصداقة', district_id: 2, vote_count: 0, logo: 'صداقات قوية للمجتمع' },
-      { list_name: 'قائمة الطموحات', district_id: 3, vote_count: 0, logo: 'تحقيق الطموحات الوطنية' } 
+      { list_name: 'قائمة الطموحات', district_id: 3, vote_count: 0, logo: 'تحقيق الطموحات الوطنية' } ,
+      { list_name: 'قائمة التغيير', district_id: 6, vote_count: 0, logo: 'التغيير من أجل الوطن' },
+      { list_name: 'قائمة الشراكة', district_id: 6, vote_count: 0, logo: 'شراكة حقيقية' },
+      { list_name: 'قائمة الأمل المستدام', district_id: 6, vote_count: 0, logo: 'أمل مستدام للجميع' },
+      { list_name: 'قائمة الإبداع', district_id: 6, vote_count: 0, logo: 'الإبداع والابتكار' },
+      { list_name: 'قائمة التنمية', district_id: 6, vote_count: 0, logo: 'تنمية مستدامة' },
+      { list_name: 'قائمة الاستقرار', district_id: 6, vote_count: 0, logo: 'استقرار الوطن أولويتنا' },
+      { list_name: 'قائمة الوحدة', district_id: 6, vote_count: 0, logo: 'الوحدة قوة' },
+      { list_name: 'قائمة الشباب', district_id: 6, vote_count: 0, logo: 'تمكين الشباب' },
+      { list_name: 'قائمة العدالة الاجتماعية', district_id: 6, vote_count: 0, logo: 'عدالة اجتماعية للجميع' },
+      { list_name: 'قائمة التنمية الاقتصادية', district_id: 6, vote_count: 0, logo: 'تنمية اقتصادية متكاملة' },
+      { list_name: 'قائمة التعاون', district_id: 6, vote_count: 0, logo: 'التعاون من أجل التقدم' },
+      { list_name: 'قائمة الرؤية المستقبلية', district_id: 6, vote_count: 0, logo: 'رؤية واضحة للمستقبل' }
     
     ]);
   });
