@@ -1,17 +1,17 @@
 module.exports = {
   development: {
-    client: "pg",
+    client: 'pg', // تحديد محرك قاعدة البيانات
     connection: {
-      host: "127.0.0.1",
-      user: "postgres",
-      password: "bmw*2212",
-      database: "Jordanian-Elections-Project",
+      host: 'localhost',
+      user: 'postgres',
+      password: '0000',
+      database: 'jordanian_elections_project'
     },
     migrations: {
-      directory: "./migrations", // مسار المجلد الذي يحتوي على ملفات المايقريشن
+      directory: './migrations' // تحديد مجلد المهاجرات
     },
     seeds: {
-      directory: "./seeds", // مسار المجلد الذي يحتوي على ملفات السييد
-    },
-  },
+      directory: './seeds' // تحديد مجلد البذور (seeds) إذا كنت ترغب في استخدامها
+    }
+  }
 };
