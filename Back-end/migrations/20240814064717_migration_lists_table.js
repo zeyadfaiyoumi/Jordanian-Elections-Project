@@ -1,6 +1,3 @@
-//جدول القوائم المحلية 
-//جدول القوائم الحزبية اسمه party_lists
-
 /**
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
@@ -15,14 +12,15 @@ exports.up = function(knex) {
           .onDelete('CASCADE'); // Optional: Deletes lists if the district is deleted
       table.integer('vote_count').defaultTo(0); // Vote count
       table.string('logo'); // Column for the logo
+      table.boolean('activation').defaultTo(false); // New column for activation, default to false
       table.timestamps(true, true); // Created at and updated at timestamps
   });
 };
 
 /**
-* @param { import("knex").Knex } knex
-* @returns { Promise<void> }
-*/
+ * @param { import("knex").Knex } knex
+ * @returns { Promise<void> }
+ */
 exports.down = function(knex) {
-  // return knex.schema.dropTable('lists');
+  return knex.schema.dropTable('lists');
 };

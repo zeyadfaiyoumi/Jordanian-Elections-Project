@@ -106,8 +106,7 @@ const Createlist = () => {
     </>
   ) : null}
 </select>
-<p>Selected District: {district}</p>
-
+ 
         </div>
       )}
 
