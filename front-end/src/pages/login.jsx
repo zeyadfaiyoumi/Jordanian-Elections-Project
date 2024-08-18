@@ -67,11 +67,16 @@ function Login({ handleLogin }) {
 
     try {
       const response = await axios.post('http://localhost:5000/api/userAuth/login', { name, email, password, nationalID });
-      console.log('Response:', response);
+      console.log('Response:', response.data);
       if (response && response.data) {
-        const { token } = response.data;
-        Cookies.set('token', token, { expires: 1 });
+        // const { token } = response.data;
+        const { token, nationalID } = response.data;
 
+        Cookies.set('token', token, { expires: 1 });
+      
+        // Store the token and nationalID in local storage
+       
+        localStorage.setItem("nationalID", nationalID);
         Swal.fire({
           title: 'تم تسجيل الدخول بنجاح!',
           text: 'مرحبًا بك في منصتنا.',

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../Media/logo.png"; // Correctly import logo image
 import navbarBackground from "../Media/navbar_1.png"; // Import the background image
-import Cookies from 'js-cookie'; // Import cookies library
+import Cookies from "js-cookie"; // Import cookies library
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,13 +15,13 @@ const Navbar = () => {
 
   // Handle user logout
   const handleLogout = () => {
-    Cookies.remove('token'); // Remove token from cookies
-    alert('You have been logged out'); // Inform user
-    navigate('/'); // Redirect to home or login page
+    Cookies.remove("token"); // Remove token from cookies
+    alert("You have been logged out"); // Inform user
+    navigate("/"); // Redirect to home or login page
   };
 
   // Check if the user is logged in
-  const isLoggedIn = !!Cookies.get('token');
+  const isLoggedIn = !!Cookies.get("token");
 
   return (
     <nav
@@ -63,8 +63,12 @@ const Navbar = () => {
             <Link to="/pages/contactUs" className="hover:text-gray-600">
               تواصل معنا
             </Link>
+            <Link to="/Voting" className="hover:text-gray-600">
+              صوت الان
+            </Link>
             <Link to="/" className="flex items-center">
-              <img src={logo} alt="Logo" className="h-10" /> {/* Adjust logo size as needed */}
+              <img src={logo} alt="Logo" className="h-10" />{" "}
+              {/* Adjust logo size as needed */}
             </Link>
           </div>
         </div>

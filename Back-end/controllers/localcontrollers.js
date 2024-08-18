@@ -68,21 +68,14 @@ exports.vote = async (req, res) => {
   console.log("Vote request received:", req.body);
   const { party_list_id } = req.body;
   try {
-    if (party_list_id === "white_paper") {
-      // Handle white paper vote if needed
-      res.json({ success: true, message: "White paper vote recorded" });
-    } else {
-      const updatedParty = await db("party_lists")
-        .where({ party_list_id })
-        .increment("vote_count", 1)
-        .returning("*");
-      console.log("Updated party:", updatedParty);
-      res.json({
-        success: true,
-        message: "Vote recorded successfully",
-        updatedParty,
-      });
-    }
+    const updatedParty = await db("party_lists")
+      .where({ party_list_id })
+      .increment("vote_count", 1)
+      .returning("*");
+    
+    res.json({
+      updatedParty,
+    });
   } catch (err) {
     console.error("Error in vote controller:", err);
     res.status(500).json({ error: "Server Error", details: err.message });
